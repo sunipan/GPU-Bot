@@ -11,7 +11,7 @@ links = {'3070 FE':'https://bit.ly/3ebHiSm',
          '3060Ti FE':'https://bit.ly/3v4uYtM',
          '3080 EVGA':'https://bit.ly/3tGUGnS'}
 testURL = 'https://bit.ly/3tAivxy'
-# Path to chrome on local machine
+# Path to chrome on local machine (don't forget to add '%s')
 chromePath = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
 # Different user agents to limit potential of getting banned by best buy
 headers1 = {'user-agent':'Mozilla/5.0 (Linux; Android 10; SM-A205U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.66 Mobile Safari/537.36'}
