@@ -3,4 +3,4 @@ GPUs are extremely scarce at the moment and scalpers charge crazy amounts for th
 ## Installation
 Install the beautiful soup Python package and simply run the script, although you may need to change the chrome directory in the code to match your local machine.  
 
-`pip install beautifulsoup4'
+`pip install beautifulsoup4`
