@@ -33,14 +33,17 @@ headers = []
 for i in range(1,14):
     headers.append(globals()['headers' + str(i)])
     print('ADDING HEADER: ' + str(headers[i-1]))
-print('========================================================\n\n')
+print('========================================================\n')
 headerSelect = 0    
 while(True):
     # Iterate through the links
     for key in links:
         # Scrape the page
         page = requests.get(links[key], headers=headers[headerSelect])
-        print('Status for ' + key + ': ' + str(page))
+        if str(page) == '<Response [200]>':
+            print('Scrape Status for ' + key + ': Success')
+        else:
+            print('Status for ' + key + ': ' + str(page))
         soup = bs(page.text, 'lxml')
         # Simple link iterator variable
         headerSelect += 1
