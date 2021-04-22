@@ -1,7 +1,9 @@
 from bs4 import BeautifulSoup as bs
+import ctypes
 import webbrowser
 import requests
 import time
+import timeit
 from lxml import html
 from datetime import datetime
 
@@ -34,11 +36,18 @@ for i in range(1,14):
     headers.append(globals()['headers' + str(i)])
     print('ADDING HEADER: ' + str(headers[i-1]))
 print('========================================================\n')
-headerSelect = 0    
+headerSelect = 0
+start = time.time()
 while(True):
     # Iterate through the links
     for key in links:
         # Scrape the page
+        end = time.time()
+        if end - start > 36000:
+            ask = ctypes.windll.user32.MessageBoxW(0, "Change IP", "Warning", 1)
+            start = time.time()
+            if ask == 2:
+                break
         page = requests.get(links[key], headers=headers[headerSelect])
         if str(page) == '<Response [200]>':
             print('Scrape Status for ' + key + ': Success')
